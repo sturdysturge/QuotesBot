@@ -25,7 +25,7 @@
 
 ### Commands
 * **!ANSWER** - Reveal the answer when sent in reply to a quote
-* **!Quotes** - Send a new quote on demand
+* **!NEW** - Send a new quote on demand
 * **!SCORE** - Send the current scores
 
 ### Dataset

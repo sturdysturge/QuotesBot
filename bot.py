@@ -33,7 +33,7 @@ class QuotesBot(discord.Client):
     Accepts the following commands:
 
     !ANSWER - Reveal the answer when sent in reply to a quote
-    !Quotes - Send a new quote
+    !NEW - Send a new quote
     !SCORE - Send the current scores
     """
     def __init__(self, **options):
