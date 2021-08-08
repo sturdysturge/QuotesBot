@@ -1,10 +1,10 @@
 # F • R • I • E • N • D • S • B • O • T 
 
-## A Friends Quiz Discord Bot
+## A Quotes Quiz Discord Bot
 
 ### About
 * This bot is built in Python using the `discord.py` package
-* The bot sends Friends quotes on a customizable timer into your chosen channel
+* The bot sends quotes on a customizable timer into your chosen channel
 * Users reply to guess the character that said the line, the bot responds to confirm whether the guess is correct or not
 * A running score is kept
 * The bot accepts a few commands to prompt actions
@@ -21,13 +21,13 @@
 * `/logs` subdirectory will be created on the first run, to store the following files -
     * `history.json` to track sent quotes and their status (answered/not answered)
     * `scores.json` to keep a running scoreboard
-    * `friends.log` for basic runtime logging
+    * `Quotes.log` for basic runtime logging
 
 ### Commands
 * **!ANSWER** - Reveal the answer when sent in reply to a quote
-* **!FRIENDS** - Send a new quote on demand
+* **!Quotes** - Send a new quote on demand
 * **!SCORE** - Send the current scores
 
 ### Dataset
-* Credit to https://fangj.github.io/friends/ for their hand transcribed scripts
+* Credit to https://fangj.github.io/Quotes/ for their hand transcribed scripts
 * The data was scraped, cleaned, and cut down to a list of 16 characters (see `characters.txt`), and quotes at least 65 characters in length

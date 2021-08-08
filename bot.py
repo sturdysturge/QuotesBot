@@ -16,29 +16,29 @@ N_HOURS = os.getenv('HOURS')  # How frequently should quotes be sent?
 if not os.path.isdir('./logs'):
     os.mkdir('./logs')
 
-logging.basicConfig(level=logging.INFO, filename="./logs/friends.log", filemode="a+",
+logging.basicConfig(level=logging.INFO, filename="./logs/Quotes.log", filemode="a+",
                     format="%(asctime)-15s %(levelname)-8s %(message)s")
 
 
-class FriendsBot(discord.Client):
+class QuotesBot(discord.Client):
     """
     Connects to Discord via a bot that needs to be preconfigured
     through the Discord Developer Portal and authenticated with
     a token in a .env file.
 
-    Sends a new Friends quote to the chosen channel every N hours,
+    Sends a new Quotes quote to the chosen channel every N hours,
     users reply to guess the character. Responds to guesses, as
     well as keeping a running score.
 
     Accepts the following commands:
 
     !ANSWER - Reveal the answer when sent in reply to a quote
-    !FRIENDS - Send a new quote
+    !Quotes - Send a new quote
     !SCORE - Send the current scores
     """
     def __init__(self, **options):
         super().__init__(**options)
-        self.source_fp = './dataset/friends.csv'
+        self.source_fp = './dataset/Quotes.csv'
         self.source_df = pd.read_csv(self.source_fp)
         self.db_fp = './logs/history.json'
         self.scores_fp = './logs/scores.json'
@@ -137,7 +137,7 @@ class FriendsBot(discord.Client):
             m_name = author.name
             user_id = str(author.id)
 
-        if text.startswith('!FRIENDS'):  # User requested new quote
+        if text.startswith('!Quotes'):  # User requested new quote
             logging.info(f'New quote requested by {m_name}')
             await self.send_quote()
         elif text.startswith('!SCORE'):  # User requested scoreboard
@@ -184,6 +184,6 @@ class FriendsBot(discord.Client):
 
 
 if __name__ == '__main__':
-    bot = FriendsBot()
+    bot = QuotesBot()
     bot.timer.start()
     bot.run(TOKEN)
